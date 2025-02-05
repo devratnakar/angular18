@@ -1,0 +1,53 @@
+
+<div class="row">
+    <div class="row">
+        <div class="col-4">
+            <div class="row">
+                <div class="col-4 bg-success" >
+                    <h5>Interpolations</h5>
+                    <h3> {{cName}}</h3>
+                    {{inputType}}
+                    <input type="text" value="{{cName}}" placeholder="enter">
+                    <input type="{{typeI}}">
+                   
+                </div>
+                <div class="col-4">
+                   <div [class]="style">
+                    <h2>propery binding</h2>
+                    <input type="text" [value]="cName">
+                    <input [type]="typeI">
+                    <h3>state--{{stateName}}</h3>
+                   </div>
+        
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <button class="btn btn-success" (click)="showAlert('Welcome Angualr 18')">Show Welcome</button>
+            <button class="btn btn-success"  (click)="chnageCourse()">Change CourseName</button>
+            <span (click)="showAlert('jsn')">click here </span>
+        </div>
+        <div class="col-4">
+            <input type="text" [(ngModel)]="cName">
+
+            <select [(ngModel)]="stateName">
+                <option value="1">UP</option>
+                <option value="2">MP</option>
+                <option value="3">HP</option>
+                <option value="4">PP</option>
+            </select>
+        </div>
+    
+    </div>
+    <div class="col-4">
+        <h4>Use Of signal</h4>
+        {{FistName()}}
+        <button class="btn btn-success" (click)="changeSIgnal()">click to C</button>
+    </div>
+    <div class="col-4">
+
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>

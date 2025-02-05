@@ -1,0 +1,61 @@
+<div>
+    <h3>Data Entry</h3>
+    <form [formGroup]="dataForm" (ngSubmit)="addData()">
+      <label for="label">Label:</label>
+      <input id="label" formControlName="label" type="text" />
+  
+      <label for="color">Color:</label>
+      <input id="color" formControlName="color" type="text" />
+  
+      <label for="value">Value:</label>
+      <input id="value" formControlName="value" type="text" />
+  
+      <button type="submit">Add Data</button>
+    </form>
+  
+    <h4>Entered Data</h4>
+    <div>
+      <h5>Labels</h5>
+      <p>{{labelList.join(', ')}}</p>
+      <!-- <ul>
+        <li *ngFor="let label of labelList">{{ label }}</li>
+      </ul> -->
+    </div>
+  
+    <div>
+      <h5>Colors</h5>
+      <!-- <ul>
+        <li *ngFor="let color of colorList">{{ color }}</li>
+      </ul> -->
+      <p>{{colorList.join(', ')}}</p>
+    </div>
+  
+    <div>
+      <h5>Values</h5>
+      <!-- <ul>
+        <li *ngFor="let value of valueList">{{ value }}</li>
+      </ul> -->
+      <p>{{valueList.join(', ')}}</p>
+    </div>
+  </div>
+
+<div class="row"[hidden]="showChart">
+    <div class="col-3" >
+        <select [(ngModel)]="chartType">
+            <option value="pie">PIE</option>
+            <option value="bar">BAR</option>
+            <option value="polarArea">Polar Area</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <button class="bg bg-primary" (click)="showChartFun()">Show Chart</button>
+    </div>
+</div>
+<div class="row-3" style="width: 300px; height: 400px;">
+    <div  *ngIf="showChart">
+        <canvas id='pieChart'></canvas>
+      </div>
+</div>
+  
+  
+  

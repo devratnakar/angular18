@@ -1,0 +1,65 @@
+<div class="mt-4 bg-secondary">
+    <h3>Structiral Directive</h3>
+    <p>ngIf and ngFor</p>
+</div>
+<div class="row pt-4">
+    <div *ngIf="div1Visible" class="col-3 bg-danger p-3 text-center">
+        <h3>Div1</h3>
+    </div>
+    <div *ngIf="div2Visible" class="col-3 bg-success p-3 text-center">
+        <h3>Div 2</h3>
+    </div>
+    <div *ngIf="num1==num2" class="col-3 bg-primary p-4 text-center">
+        <h3>Div 3</h3>
+    </div>
+    <div *ngIf="selectedState=='USA'" class="col-3 bg-secondary p-4 text-center">
+        <h3>Div 4</h3>
+    </div>
+</div>
+
+<div class="row pt-4">
+    <div class="col-3 p-3 text-center">
+        <button class="btn btn-danger" (click)="showDiv1()">Show</button>
+        <button class="btn btn-success"(click)="hideDiv1()">Hide</button>
+    </div>
+    <div class="col-3 p-3 text-center">
+        <button class="btn btn-success"(click)="changeDiv2()">Toggle</button>
+    </div>
+
+    <div class="col-3 text-center">
+        <div style="display: flex; align-items: center;" >
+            <input class="width-50" type="text"[(ngModel)]="num1" placeholder="num1">
+            <input class="width-50"type="text"[(ngModel)]="num2" placeholder="num2">
+        </div>
+        
+    </div>
+    <div class="col-3 p-3 text-center">
+        <select [(ngModel)]="selectedState">
+            <option value="">Select State</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Shrilanka">Shrilanka</option>
+        </select>
+    </div>
+
+</div>
+
+<div class="row">
+    
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let city of stateList">{{city}}</li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <select >
+            <option *ngFor="let s of stateList" value="s">{{s}}</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <div *ngFor="let student of studentList">
+            {{student.name}}
+
+        </div>
+    </div>
+</div>

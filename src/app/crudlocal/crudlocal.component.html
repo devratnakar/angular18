@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-8">
+        <div class="card-header bg-success">
+            <h6>Emplyee List</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Name</th>
+                                <th>ContactNumber</th>
+                                <th>Email Id</th>
+                            </tr>
+                        </thead>
+                        @for (item of employeeList; track $index) {}
+                        <tbody>
+                            <tr>
+                                <th>index</th>
+                                <th>{{employeeList}}</th>
+                                <th>{{employeeList}}</th>
+                                <th>{{employeeList}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="col-4">
+        <div class="card-header bg-success">
+            New Employee
+        </div>
+        <div class="card-body">
+            <form [formGroup]="employeeForm">
+                <div class="row">
+                    <div class="col-12">
+                        <label for="">Name</label>
+                        <input type="text" formControlName="name" formControlName="name" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Email</label>
+                        <input type="text" formControlName="email" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">conatact</label>
+                        <input type="text" formControlName="contactNo" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">City</label>
+                        <input type="text" formControlName="city" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">State</label>
+                        <input type="text" formControlName="state" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Pincode</label>
+                        <input type="text" formControlName="name" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="">Address</label>
+                        <textarea formControlName="address" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 text-center pt-3">
+                        <button class="btn btn-secondary">Reset</button>
+                    </div>
+                    <div class="col-6 text-center pt-3">
+                        <button class="btn btn-secondary" (click)="onSave()">Add Employee</button>
+                    </div>
+    
+                </div>
+                </form>
+
+        </div>
+
+    </div>
+ 
+</div>
