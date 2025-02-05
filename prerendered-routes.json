@@ -1,0 +1,17 @@
+{
+  "routes": [
+    "/addEmp",
+    "/attDir",
+    "/chart",
+    "/crud",
+    "/crudlocal",
+    "/datab",
+    "/home",
+    "/lexEx1",
+    "/lexEx1/lexEx1",
+    "/project",
+    "/sd",
+    "/service",
+    "/vc"
+  ]
+}
