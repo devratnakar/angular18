@@ -9,6 +9,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './child1.component.css'
 })
 export class Child1Component {
-  name?: string;
+  name: string='';
 
 }

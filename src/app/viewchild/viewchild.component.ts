@@ -11,20 +11,25 @@ import { Child2Component } from "./child2/child2.component";
 })
 export class ViewchildComponent {
 
-  @ViewChild(Child1Component) child1?: Child1Component;
-  nameFromChild1?: string;
-  constructor(private cdr:ChangeDetectorRef) { }
+  @ViewChild(Child1Component) child1!: Child1Component;
+  nameFromChild1: string='';
+ // constructor(private cdr:ChangeDetectorRef) { }
  ngOnInit() {
   
  }
- ngAfterViewInit() {
+//  ngAfterViewInit() {
  
-   this.nameFromChild1 = this.child1?.name;
-  //  setInterval(()=>{
-  //   this.nameFromChild1=this.child1?.name;
-  //   this.cdr.detectChanges();
-  //  },10000);
- }
+//    //this.nameFromChild1 = this.child1?.name;
+//    setInterval(()=>{
+//     this.nameFromChild1=this.child1.name;
+//     //this.cdr.detectChanges();
+//    },1000);
+//  }
 
+// ngAfterViewInit() {
+//   setInterval(()=>{
+//     this.nameFromChild1=this.child1.name;
+//   });
+// }
 
 }
